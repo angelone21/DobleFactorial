@@ -27,4 +27,12 @@ public class ControladorNumeros {
         return resultado;
     }
 
+    public boolean modulo(BigInteger val) {
+        if (!val.mod(new BigInteger("2")).equals(BigInteger.ZERO)) {
+            return true;
+        }
+        return false;
+    }
+
 }
+

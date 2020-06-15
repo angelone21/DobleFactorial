@@ -10,30 +10,27 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     </head>
     <body>
+        <a href="ServletControlador">Comenzar!</a>
         <h4>Proyecto Doble Factorial de numeros grandes</h4>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"># Cores</span>
+        <form action="ServletControlador" method="post" >
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"># Cores</span>
+                </div>
+                <input type="number" name="cores" class="form-control" aria-label="Cores" aria-describedby="basic-addon1">
             </div>
-            <input type="number" class="form-control" aria-label="Cores" aria-describedby="basic-addon1">
-        </div>
-        <br>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Número</span>
+            <br>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Número</span>
+                </div>
+                <textarea class="form-control" name="numero" aria-label="textnumero"></textarea>
             </div>
-            <textarea class="form-control" aria-label="textnumero"></textarea>
-        </div>
-        <br>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Resultado</span>
-            </div>
-            <textarea type="number "class="form-control" aria-label="textresultado"></textarea>
-        </div>
-        <br>
-
-        <button type="button" class="btn btn-outline-dark">Calcular</button>
-        <button type="button" class="btn btn-outline-dark">Descargar Resultado</button>
+            <br>
+            
+            <button type="submit" class="btn btn-outline-dark">Calcular</button>
+            <input type="hidden" name="accion" value="calcular"/>
+        </form>
+            
     </body>
 </html>
