@@ -21,6 +21,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="js/GuardarResultado.js"></script>
     </head>
     <body>
         <h4>Proyecto Doble Factorial de numeros grandes</h4>
@@ -29,29 +30,29 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"># Cores</span>
                 </div>
-                <input type="number" name="cores" class="form-control" aria-label="Cores" aria-describedby="basic-addon1"  value='<%=request.getAttribute("cores")%>' />
+                <input required type="number" name="cores" class="form-control" aria-label="Cores" aria-describedby="basic-addon1"  value='<%=request.getAttribute("cores")%>' />
             </div>
             <br>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Número</span>
                 </div>
-                <textarea class="form-control" name="numero" aria-label="textnumero"><%= request.getAttribute("numero") %></textarea>
+                <input id="numero" required type="number" name="numero" class="form-control" aria-label="Cores" aria-describedby="basic-addon1"  value='<%=request.getAttribute("numero")%>' />
             </div>
             <br>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Resultado</span>
                 </div>
-                <textarea readonly type="number" name="resultado" class="form-control" aria-label="textresultado"><%= request.getAttribute("resultado") %></textarea>
+                <textarea id="resultado" readonly type="number" name="resultado" class="form-control" aria-label="textresultado"><%= request.getAttribute("resultado")%></textarea>
             </div>
             <br>
 
             <button type="submit" class="btn btn-outline-dark">Calcular</button>
-            <button type="button" class="btn btn-outline-dark">Descargar Resultado</button>
             <input type="hidden" name="accion" value="calcular"/>
         </form>
-        
+            <br>
+        <button class="btn btn-outline-dark" onclick="saveTextAsFile()">Descargar Resultado</button>
 
     </body>
 </html>
