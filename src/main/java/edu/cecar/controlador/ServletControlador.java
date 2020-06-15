@@ -87,7 +87,7 @@ public class ServletControlador extends HttpServlet {
                                     finals = numeroCalcular;
                                 } else {
                                     inicio = finals.add(new BigInteger("2"));
-                                    finals = finals.multiply(new BigInteger("2"));
+                                    finals = finals.add(indice.multiply(new BigInteger("2")));
                                 }
 
                             }
