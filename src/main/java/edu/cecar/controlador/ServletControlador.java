@@ -43,7 +43,7 @@ public class ServletControlador extends HttpServlet {
             BigInteger indice;
             BigInteger finals;
             ArrayList<FactorialHilo> hilos = new ArrayList<>();
-            procesadores = (int) request.getAttribute("cores");
+            //procesadores = (int) request.getAttribute("cores");
             System.out.println("PROCESAD" + procesadores);
             // System.out.println("RESAULTSADO: "+ cf.factorial(new BigInteger("19")));
             try {
