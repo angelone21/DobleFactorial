@@ -6,7 +6,6 @@
 package edu.cecar.controlador;
 
 import edu.cecar.modelo.FactorialHilo;
-import edu.cecar.modelo.FiltroArchivoPlano;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -158,26 +157,6 @@ public class ServletControlador extends HttpServlet {
 
             } catch (Exception e) {
 
-            }
-        }
-
-        if (request.getParameter("accion").equals("descargar")) {
-            JFileChooser jf = new JFileChooser();
-            jf.addChoosableFileFilter(new FiltroArchivoPlano());
-            jf.setAcceptAllFileFilterUsed(false);
-            try {
-                int retrival = jf.showSaveDialog(null);
-                if (retrival == JFileChooser.APPROVE_OPTION) {
-
-                    FileWriter fw = new FileWriter(jf.getSelectedFile() + ".txt");
-                    fw.write(request.getParameter("resultado"));
-                    fw.write("\n");
-                    fw.write("Cores utilizados: " + procesadores);
-                    fw.close();
-
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al guardar el Archivo.");
             }
         }
     }
