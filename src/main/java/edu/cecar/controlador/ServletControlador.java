@@ -72,7 +72,7 @@ public class ServletControlador extends HttpServlet {
                             inicio = new BigInteger("2");
                             indice = ((numeroCalcular.divide(new BigInteger("2"))).divide(BigInteger.valueOf(procesadores)));
                             finals = indice.multiply(new BigInteger("2"));
-                            System.out.println("indiceasdf " + indice);
+                            System.out.println("numeros cada hilo: " + indice);
                             BigInteger resultado = new BigInteger("1");
                             for (int i = 0; i < procesadores; i++) {
                                 System.out.println("Inicio: " + inicio);
@@ -81,7 +81,7 @@ public class ServletControlador extends HttpServlet {
                                 hilos.add(cf);
                                 cf.start();
                                 if (i == procesadores - 2) {
-                                    System.out.println("asd");
+                                    System.out.println("Ultimo hilo:");
                                     inicio = finals.add(new BigInteger("2"));
                                     finals = numeroCalcular;
                                 } else {
