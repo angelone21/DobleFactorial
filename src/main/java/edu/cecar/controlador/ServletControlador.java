@@ -75,8 +75,9 @@ public class ServletControlador extends HttpServlet {
                             System.out.println("numeros cada hilo: " + indice);
                             BigInteger resultado = new BigInteger("1");
                             for (int i = 0; i < procesadores; i++) {
+                                System.out.println("Hilo: "+ (i+1));
                                 System.out.println("Inicio: " + inicio);
-                                System.out.println("Indice: " + finals);
+                                System.out.println("Final: " + finals);
                                 cf = new FactorialHilo(inicio, finals);
                                 hilos.add(cf);
                                 cf.start();
@@ -120,16 +121,16 @@ public class ServletControlador extends HttpServlet {
                             indice = ((numeroCalcular.divide(new BigInteger("2"))).divide(BigInteger.valueOf(procesadores)));
                             finals = indice.multiply(new BigInteger("2"));
                             finals = finals.add(BigInteger.ONE);
-                            System.out.println("indiceasdf " + indice);
+                            System.out.println("numeros cada hilo: " + indice);
                             BigInteger resultado = new BigInteger("1");
                             for (int i = 0; i < procesadores; i++) {
+                                System.out.println("Hilo: "+ (i+1));
                                 System.out.println("Inicio: " + inicio);
-                                System.out.println("Indice: " + finals);
+                                System.out.println("Final: " + finals);
                                 cf = new FactorialHilo(inicio, finals);
                                 hilos.add(cf);
                                 cf.start();
                                 if (i == procesadores - 2) {
-                                    System.out.println("asd");
                                     inicio = finals.add(new BigInteger("2"));
                                     finals = numeroCalcular;
                                 } else {
