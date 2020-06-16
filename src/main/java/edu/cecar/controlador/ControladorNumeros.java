@@ -14,13 +14,6 @@ import java.util.ArrayList;
  */
 public class ControladorNumeros {
 
-    public ArrayList<BigInteger> obtenerNumeros(BigInteger n) {
-        ArrayList<BigInteger> lista = new ArrayList<BigInteger>();
-        for (BigInteger i = n; i.compareTo(BigInteger.ONE) >= 0; i = i.subtract(BigInteger.valueOf(2))) {
-            lista.add(i);
-        }
-        return lista;
-    }
 
     public BigInteger multiplicar(BigInteger n1, BigInteger n2) {
         BigInteger resultado = n1.multiply(n2);
